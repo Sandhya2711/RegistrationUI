@@ -1,4 +1,4 @@
-export class UserN{
+export class User{
     id:number;
     emailId:String;
     userName:String;
