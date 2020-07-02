@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginServiceService } from 'src/app/service/login-service.service';
-import { Match } from '../match';
+import { Match } from 'src/app/component/match';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-login-success',
