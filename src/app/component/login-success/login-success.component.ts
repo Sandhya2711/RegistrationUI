@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LoginServiceService } from 'src/app/service/login-service.service';
+import { Match } from '../match';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-login-success',
   templateUrl: './login-success.component.html',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginSuccessComponent implements OnInit {
 
-  constructor() { }
+  userData:String;
+  matches:Match[];
+  constructor(private loginService:LoginServiceService,private route:ActivatedRoute) {
+    loginService.getMatchSechdule().subscribe(data=> {
+      this.matches=data;
+    
+    });
+    console.log(this.matches)
+   }
 
   ngOnInit(): void {
+
+    this.userData=sessionStorage.getItem("userData");
+ 
+  }
+
+  getDate(dateStr):Date{
+    console.log(dateStr)
+       let d=new Date(dateStr);
+       console.log("date",d)
+       return d;
   }
 
 }
