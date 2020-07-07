@@ -9,7 +9,7 @@
                         <h3 class="text-center text-info">Login</h3>
 
                          <div class="form-group"> 
-                            <label for="username" class="text-info">Enter Email:</label><br>
+                            <label for="username" class="text-info">Enter email:</label><br>
                             <input type="email" name="email" id="email" class="form-control" [(ngModel)]=user.emailId required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" #email="ngModel" [class.is-invalid]="email.invalid && email.touched">
                             <!-- <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email Id is required</small> -->
                             
